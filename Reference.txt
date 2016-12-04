@@ -1,0 +1,54 @@
+***Senator Information***
+
+"personid": https://www.govtrack.us/api/v2/role?current=true
+Objects --> person --> id
+
+"bioguideid": https://www.govtrack.us/api/v2/role?current=true
+Objects --> person --> bioguideid
+
+"firstname": https://www.govtrack.us/api/v2/role?current=true
+Objects --> firstname
+
+"lastname":  https://www.govtrack.us/api/v2/role?current=true
+Objects --> lastname
+
+"image": https://theunitedstates.io/images/congress/[size]/[bioguide].jpg
+
+"party": https://www.govtrack.us/api/v2/role?current=true
+Objects --> party
+
+"state": https://www.govtrack.us/api/v2/role?current=true
+Objects --> state
+
+"rank": https://www.govtrack.us/api/v2/role?current=true
+Objects --> rank
+
+"committee chair": https://www.govtrack.us/api/v2/person/[personid]
+"committeeassignments" --> iterate list, if "role" = "chairman" - include
+"committeeassignment" --> "committee" (which returns an id number) --> then use the committee API to present the committe name. [array of names]
+
+"leadership title": https://www.govtrack.us/api/v2/role?current=true
+Objects --> "leadership_title" (not for everyone)
+
+"Terms": https://www.govtrack.us/api/v2/person/[personid]
+"roles" --> "startdate" (if role_type = "senator")
+
+"total points":
+
+***Committees***
+"committee_name": https://www.govtrack.us/api/v2/committee/[committee id]
+-->"name"
+
+
+
+*** potential points***
+
+rss feed: https://www.govtrack.us/api/v2/role?current=true
+Objects --> "extra" --> "rss_url" returns URL
+
+tweets:https://www.govtrack.us/api/v2/role?current=true
+Object --> "person" --> "twitterid"
+
+***Additional Info***
+Terms for senators in Class I expire in 2019, Class II in 2021, and Class III in 2017
+https://github.com/Thinkful-Ed/client-mock-data-example
