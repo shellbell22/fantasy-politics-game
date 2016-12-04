@@ -10,8 +10,8 @@ var SENATOR_LIST = {
             "chairman_rankingmember": ["Senate Committee on Armed Services", "Senate Committee on Foreign Relations"],
             "start_date": "2013",
             "rank": "junior",
-            "leadership_title": null,
-            "total points": 10,
+            "leadership_title": "Vice President Candidate",
+            "totalpoints": "10",
         },
 
         {
@@ -26,7 +26,7 @@ var SENATOR_LIST = {
             "start_date": "2013",
             "rank": "junior",
             "leadership_title": null,
-            "total points": 15,
+            "totalpoints": "15",
         },
 
         {
@@ -41,7 +41,7 @@ var SENATOR_LIST = {
             "start_date": "2013",
             "rank": "senior",
             "leadership_title": null,
-            "total points": 20,
+            "totalpoints": "20",
         }
     ]
 };
@@ -71,9 +71,9 @@ function displaySenators(data) {
         $('body').append('<p> Party: ' + data.senators[index].party + '</p>');
         $('body').append('<p> State: ' + data.senators[index].state + '</p>');
         $('body').append('<p> Chairman/Ranking Member:' + data.senators[index].chairman_rankingmember + '</p>');
-        $('body').append('<p> Points:' + data.senators[index].points + '</p>');
+        $('body').append('<p> Points:' + data.senators[index].totalpoints + '</p>');
         if (data.senators[index].leadership_title) {
-        $('body').append('<p> Points:' + data.senators[index].points + '</p>');
+        $('body').append('<p> Leadership Title:' + data.senators[index].leadership_title + '</p>');
       }
     }
 }
