@@ -1,47 +1,84 @@
 ***Senator Information***
 
-"personid": https://www.govtrack.us/api/v2/role?current=true
-Objects --> person --> id
+---Member List API---
+https://api.propublica.org/congress/v1/114/senate/members.json
 
-"bioguideid": https://www.govtrack.us/api/v2/role?current=true
-Objects --> person --> bioguideid
+"personid":
+Results --> Members --> id
 
-"firstname": https://www.govtrack.us/api/v2/role?current=true
-Objects --> firstname
+"firstname":
+results --> members --> first_name
 
-"lastname":  https://www.govtrack.us/api/v2/role?current=true
-Objects --> lastname
+"lastname":
+results --> members --> last_name
 
-"image": https://theunitedstates.io/images/congress/[size]/[bioguide].jpg
+"party":
+results --> members --> party (returns "D" or "R")
 
-"party": https://www.govtrack.us/api/v2/role?current=true
-Objects --> party
+"state":
+results --> members --> state
 
-"state": https://www.govtrack.us/api/v2/role?current=true
-Objects --> state
+"seniority":
+results --> members --> seniority (returns number of years)
 
-"rank": https://www.govtrack.us/api/v2/role?current=true
-Objects --> rank
+"missedvoteper":
+results --> members --> "missed_votes_pct"
 
-"committee chair": https://www.govtrack.us/api/v2/person/[personid]
-"committeeassignments" --> iterate list, if "role" = "chairman" - include
-"committeeassignment" --> "committee" (which returns an id number) --> then use the committee API to present the committe name. [array of names]
-
-"leadership title": https://www.govtrack.us/api/v2/role?current=true
-Objects --> "leadership_title" (not for everyone)
-
-"Terms": https://www.govtrack.us/api/v2/person/[personid]
-"roles" --> "startdate" (if role_type = "senator")
-
-"total points":
-
-***Committees***
-"committee_name": https://www.govtrack.us/api/v2/committee/[committee id]
--->"name"
+"twitter":
+results --> members --> "twitter_account"
 
 
+---Specific Member Information---
 
-*** potential points***
+https://api.propublica.org/congress/v1/members/{member-id}.json
+
+"chairman_rankingmembers":
+results --> roles --> if congress = 114 --> committees --> if rank in party == 1 --> "name"
+
+"bills_sponsored":
+results --> roles --> if congress = 114 --> bills_sponsored
+
+"bills_cosponsored":
+results --> roles --> if congress = 114 --> bills_cosponsored
+
+---Senator Images---
+
+https://www.congress.gov/img/member/[a000360].jpg
+where number is "id" from above
+
+
+---Points---
+
+Bill Updates:
+https://api.propublica.org/congress/v1/members/{member-id}/bills/{type}.json
+"billtitle":
+results --> bills --> title
+
+"latest_major_action_date":
+results --> bills --> "latest_major_action_date"
+
+"latest_major_action":
+results --> bills --> "latest_major_action"
+
+Votes: (updated every 30 minutes)
+https://api.propublica.org/congress/v1/{congress}/{chamber}/sessions/{session-number}/votes/{roll-call-number}.json
+
+"voteposition":
+results--> votes --> positions --> memberid --> vote_position
+
+
+
+
+
+
+
+
+votes
+sponsored bills
+co-sponsored bills
+extra points for bills passed
+"roll call"
+expenses --> money spent/money earned
 
 rss feed: https://www.govtrack.us/api/v2/role?current=true
 Objects --> "extra" --> "rss_url" returns URL

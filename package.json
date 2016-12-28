@@ -9,7 +9,16 @@
   "author": "shellbell",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "bcryptjs": "^2.4.0",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "mongoose": "^4.7.1",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

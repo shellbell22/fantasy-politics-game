@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Senator List</title>
-	<link href="css/style.css" rel="stylesheet">
+	<link href="index.css" rel="stylesheet">
 </head>
+
 <body>
-	<h1> Hello World </h1>
-	<p> Mock Senator Data </p>
+	<h1> Choose your Team </h1>
+	<!--  <p> Mock Senator Data </p> -->
+	<div id='senators' class='row'> </div>
+
+	<div class='login'>
+		<div class="row">
+			<form class="col s12" id="loginform">
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="username" type="username" class="validate">
+						<label for="username">Email</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password" type="password" class="validate">
+						<label for="password">Password</label>
+					</div>
+				</div>
+
+
+				<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+					<i class="material-icons right">send</i>
+				</button>
+			</form>
+		</div>
+	</div>
+
+	<div class='templates'>
+
+		<div class="senator col s12 m3">
+			<div class="card card-panel hoverable">
+				<div class="card-image">
+					<img src="images/sample-1.jpg">
+					<span class="card-title">Card Title</span>
+				</div>
+				<div class="card-content">
+					<p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+				</div>
+				<div class="card-action">
+					<a href="#">This is a link</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css" />
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
 </body>
+
 </html>
